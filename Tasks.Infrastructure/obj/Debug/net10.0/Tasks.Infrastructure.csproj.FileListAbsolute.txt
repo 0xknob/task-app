@@ -1,0 +1,15 @@
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\bin\Debug\net10.0\Tasks.Infrastructure.deps.json
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\bin\Debug\net10.0\Tasks.Infrastructure.dll
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\bin\Debug\net10.0\Tasks.Infrastructure.pdb
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\bin\Debug\net10.0\Tasks.Domain.dll
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\bin\Debug\net10.0\Tasks.Domain.pdb
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.AssemblyInfo.cs
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.In.E44DA345.Up2Date
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.dll
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\refint\Tasks.Infrastructure.dll
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\Tasks.Infrastructure.pdb
+C:\Users\grm\Desktop\task-app\Tasks.Infrastructure\obj\Debug\net10.0\ref\Tasks.Infrastructure.dll
