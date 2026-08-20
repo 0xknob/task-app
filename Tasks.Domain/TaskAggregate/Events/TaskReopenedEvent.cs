@@ -1,8 +1,9 @@
 using Tasks.Domain.common;
+using Tasks.Domain.TaskAggregate;
 
 namespace Tasks.Domain.TaskAggregate.Events;
 
-public sealed record TaskConcludedEvent(
+public sealed record TaskReopenedEvent(
     TaskItemId TaskId,
-    DateTime ConcludedAt,
+    DateTime ReopenedAt,
     DateTime OccurredOn) : IDomainEvent;

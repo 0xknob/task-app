@@ -1,8 +1,10 @@
 using Tasks.Domain.common;
+using Tasks.Domain.TaskAggregate;
 
 namespace Tasks.Domain.TaskAggregate.Events;
 
-public sealed record TaskConcludedEvent(
+public sealed record TaskAssignedEvent(
     TaskItemId TaskId,
-    DateTime ConcludedAt,
+    Guid AssigneeUserId,
+    DateTime AssignedAt,
     DateTime OccurredOn) : IDomainEvent;
