@@ -1,6 +1,7 @@
 <Solution>
   <Project Path="Tasks.Api/Tasks.Api.csproj" />
   <Project Path="Tasks.Application/Tasks.Application.csproj" />
+  <Project Path="Tasks.Domain.Tests/Tasks.Domain.Tests.csproj" />
   <Project Path="Tasks.Domain/Tasks.Domain.csproj" />
   <Project Path="Tasks.Infrastructure/Tasks.Infrastructure.csproj" />
 </Solution>

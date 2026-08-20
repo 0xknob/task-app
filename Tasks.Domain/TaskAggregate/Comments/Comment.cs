@@ -17,6 +17,8 @@ namespace Tasks.Domain.TaskAggregate.Comments;
 /// </summary>
 public sealed class Comment : Entity<Guid>
 {
+    public const int MaxContentLength = 1000;
+
     public Guid AuthorUserId { get; private set; }
     public string Content { get; private set; } = string.Empty;
     public DateTime CreatedAt { get; private set; }
@@ -28,13 +30,25 @@ public sealed class Comment : Entity<Guid>
     // Quem usar Result<Comment> na criação fica mais alinhado com DDD.
     internal static Result<Comment> Create(Guid authorUserId, string content)
     {
-        if (authorUserId == Guid.Empty)
-            return Result.Fail<Comment>("Autor do comentário é obrigatório.");
-
-        if (string.IsNullOrWhiteSpace(content))
-            return Result.Fail<Comment>("Conteúdo do comentário é obrigatório.");
+        var validation = Validate(authorUserId, content);
+        if (validation.IsFailure)
+            return Result.Fail<Comment>(validation.Error!);
 
         return Result.Ok(new Comment(authorUserId, content.Trim()));
+    }
+
+    private static UnitResult Validate(Guid authorUserId, string content)
+    {
+        if (authorUserId == Guid.Empty)
+            return Result.Fail("Autor do comentário é obrigatório.");
+
+        if (string.IsNullOrWhiteSpace(content))
+            return Result.Fail("Conteúdo do comentário é obrigatório.");
+
+        if (content.Length > MaxContentLength)
+            return Result.Fail($"Comentário não pode ter mais de {MaxContentLength} caracteres.");
+
+        return Result.Ok();
     }
 
     private Comment(Guid authorUserId, string content)
@@ -50,11 +64,9 @@ public sealed class Comment : Entity<Guid>
     /// </summary>
     public UnitResult Edit(string newContent)
     {
-        if (string.IsNullOrWhiteSpace(newContent))
-            return Result.Fail("Conteúdo do comentário não pode ser vazio.");
-
-        if (newContent.Length > 1000)
-            return Result.Fail("Comentário não pode ter mais de 1000 caracteres.");
+        var validation = Validate(AuthorUserId, newContent);
+        if (validation.IsFailure)
+            return Result.Fail(validation.Error!);
 
         Content = newContent.Trim();
         return Result.Ok();
