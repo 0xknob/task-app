@@ -1,23 +1,30 @@
+// Tasks.Api/Program.cs
+using Tasks.Application;
+using Tasks.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Adiciona camada de Application (handlers CQRS)
+builder.Services.AddApplication();
 
+// Adiciona camada de Infrastructure (InMemory por padrão)
+builder.Services.AddInfrastructure();
+
+// Adiciona controllers + OpenAPI
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Pipeline HTTP
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
