@@ -1,4 +1,5 @@
 // Tasks.Api/Program.cs
+using System.Text.Json.Serialization;
 using Tasks.Application;
 using Tasks.Infrastructure;
 
@@ -11,7 +12,16 @@ builder.Services.AddApplication();
 builder.Services.AddInfrastructure();
 
 // Adiciona controllers + OpenAPI
-builder.Services.AddControllers();
+builder.Services
+    .AddControllers()
+    // Aceita enums como string no JSON de ENTRADA (request body).
+    // A SAÍDA continua serializando como string (via .ToString() no mapping).
+    // Sem isso, o front teria que enviar "priority": 2 em vez de "priority": "High".
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(
+            new System.Text.Json.Serialization.JsonStringEnumConverter());
+    });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
