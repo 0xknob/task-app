@@ -25,6 +25,17 @@ builder.Services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
+// CORS: libera o front-end em http://localhost:5173 (Vite/React)
+// a chamar esta API. Em produção, o origin será o do Azure App Service.
+// Sem isso, o navegador BLOQUEIA a request por segurança.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DevFront", policy =>
+        policy.WithOrigins("http://localhost:5173", "http://localhost:6006")
+              .AllowAnyHeader()
+              .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // Pipeline HTTP
@@ -33,6 +44,8 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+// IMPORTANTE: UseCors vem ANTES de UseHttpsRedirection/UseAuthorization/MapControllers
+app.UseCors("DevFront");
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
