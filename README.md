@@ -205,6 +205,18 @@ Hoje usa **InMemory**. Pra usar Cosmos DB:
 
 ---
 
+## 📐 Decisões arquiteturais (ADRs)
+
+Decisões importantes ficam registradas em [`docs/adr/`](docs/adr/) no formato
+MADR (Markdown ADR). Cada ADR documenta **contexto, decisão, consequências e
+alternativas rejeitadas** — não só "o que fizemos", mas "por que fizemos".
+
+| # | Título | Status |
+|---|---|---|
+| [0001](docs/adr/0001-accept-enums-as-strings.md) | Aceitar enums como strings no JSON | ✅ Aceito |
+
+---
+
 ## 📚 Roadmap
 
 - [x] Domain completo com testes
