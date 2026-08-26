@@ -243,6 +243,18 @@ Não é um SaaS pronto pra produção — é um **template honesto** com peças 
 
 ---
 
+## 📖 Diário de aprendizado
+
+Documentos escritos em primeira pessoa sobre como esse projeto foi construído:
+
+| # | Título | Foco |
+|---|---|---|
+| [01](docs/learning-journal/01-a-viagem-de-3-semanas.md) | A viagem de 3 semanas | Narrativa cronológica: o que tentei, o que travou, o que aprendi |
+| [02](docs/learning-journal/02-como-as-pecas-se-conectam.md) | Como as peças se conectam | Mapa conceitual do sistema + **roteiro de 15min pra call com entrevistador** |
+| [03](docs/learning-journal/03-stack-em-uma-pagina-cada.md) | Stack em uma página cada | Reference card: o que é, por que está no projeto, exemplo de código real |
+
+---
+
 ## 📚 Roadmap
 
 - [x] Domain completo com testes
