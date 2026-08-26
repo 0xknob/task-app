@@ -217,6 +217,32 @@ alternativas rejeitadas** — não só "o que fizemos", mas "por que fizemos".
 
 ---
 
+## 🎓 Status do projeto (honesto)
+
+Este é um projeto de **aprendizado em construção**. O que está sólido vs o que ainda não foi feito:
+
+**✅ Maduro (production-ready no escopo deste portfólio)**
+- 4 camadas DDD com dependência na direção correta
+- 69 testes de invariantes passando
+- API HTTP com validação, CORS, mapeamento Domain→DTO
+- Documentação de decisão arquitetural (ADR)
+
+**🟡 Em progresso**
+- Persistência: hoje é InMemory (proposital — permite trocar por SQL/Cosmos sem mudar handlers)
+- Cobertura de testes: foca no Domain. Application/Infrastructure ainda não têm suite
+
+**🔴 Ainda não feito**
+- Persistência real em Cosmos DB ou SQL Azure
+- Deploy no Azure App Service
+- CI/CD pipeline (GitHub Actions / Azure DevOps)
+- Logging estruturado (Serilog, Application Insights)
+- Autenticação/autorização
+
+A ideia é mostrar **fundamentos sólidos de DDD + CQRS** num escopo pequeno.
+Não é um SaaS pronto pra produção — é um **template honesto** com peças reais.
+
+---
+
 ## 📚 Roadmap
 
 - [x] Domain completo com testes
