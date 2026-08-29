@@ -217,44 +217,6 @@ alternativas rejeitadas** — não só "o que fizemos", mas "por que fizemos".
 
 ---
 
-## 🎓 Status do projeto (honesto)
-
-Este é um projeto de **aprendizado em construção**. O que está sólido vs o que ainda não foi feito:
-
-**✅ Maduro (production-ready no escopo deste portfólio)**
-- 4 camadas DDD com dependência na direção correta
-- 69 testes de invariantes passando
-- API HTTP com validação, CORS, mapeamento Domain→DTO
-- Documentação de decisão arquitetural (ADR)
-
-**🟡 Em progresso**
-- Persistência: hoje é InMemory (proposital — permite trocar por SQL/Cosmos sem mudar handlers)
-- Cobertura de testes: foca no Domain. Application/Infrastructure ainda não têm suite
-
-**🔴 Ainda não feito**
-- Persistência real em Cosmos DB ou SQL Azure
-- Deploy no Azure App Service
-- CI/CD pipeline (GitHub Actions / Azure DevOps)
-- Logging estruturado (Serilog, Application Insights)
-- Autenticação/autorização
-
-A ideia é mostrar **fundamentos sólidos de DDD + CQRS** num escopo pequeno.
-Não é um SaaS pronto pra produção — é um **template honesto** com peças reais.
-
----
-
-## 📖 Diário de aprendizado
-
-Documentos escritos em primeira pessoa sobre como esse projeto foi construído:
-
-| # | Título | Foco |
-|---|---|---|
-| [01](docs/learning-journal/01-a-viagem-de-3-semanas.md) | A viagem de 3 semanas | Narrativa cronológica: o que tentei, o que travou, o que aprendi |
-| [02](docs/learning-journal/02-como-as-pecas-se-conectam.md) | Como as peças se conectam | Mapa conceitual do sistema + **roteiro de 15min pra call com entrevistador** |
-| [03](docs/learning-journal/03-stack-em-uma-pagina-cada.md) | Stack em uma página cada | Reference card: o que é, por que está no projeto, exemplo de código real |
-
----
-
 ## 📚 Roadmap
 
 - [x] Domain completo com testes
